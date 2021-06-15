@@ -1,0 +1,1894 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sumon Rahman">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Fworld </title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="shortcut icon" type="image/ico" href="images/logo.png" />
+    <!-- Plugin-CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/linearicons.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Main-Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;700&display=swap" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<style>
+	
+	@media (max-width: 400px) {
+	#main_hdr{
+	    color: #4a4a4a !important;
+		position: absolute;
+		margin: 22px;
+		font-size: 20px;
+		margin-left: 0px;
+		font-family: 'Josefin Sans', sans-serif;
+		font-weight: 800;
+		
+	}
+	#main_para{
+		color: #6f2769 !important;
+		margin-top: 50px !important;
+		font-size: 13px !important;
+		font-family: 'Josefin Sans', sans-serif;
+		font-weight: 800;
+	}
+	.mainmenu-area #primary_menu ul.nav.navbar-nav li a{
+		
+		color:#494949 !important;
+	}
+	
+	
+	
+	
+	}
+		/*-----------------------------------------------------------------------------------
+
+Version: 1.0
+-----------------------------------------------------------------------------------
+CSS INDEX
+===================
+1. Google font
+2. Theme Default CSS
+3. Button-Style
+4. Helper-Classes
+5. MainMenu-Area
+6. Page-Title
+7. Home-Area
+8. Progress-Area
+9. Video-Area
+10. Feature-Area
+11. Service-Box
+12. Testimonial-Area
+13. Gallery-Area
+14. Download-Area
+15. Price-Area
+16. Questions-area
+17. Subscribe-Form
+18. Footer-Area
+19. ScrollUp-Button
+20. Blog-Post
+21. Pagination
+22. Comment-Respond
+23. Form-Stype
+-----------------------------------------------------------------------------------*/
+
+/*-----------------
+1. Google font
+------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800');
+
+/*-------------------
+2. Theme Default CSS
+--------------------*/
+
+* {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    color: #333333;
+}
+
+input:focus,
+button:focus,
+a:focus,
+a:hover {
+    text-decoration: none;
+    outline: none;
+    color: #768ede;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: bold;
+    line-height: 1.4em;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: #8790af;
+}
+
+
+/* Remove Chrome Input Field's Unwanted Yellow Background Color */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+/*-- 3. Button-Style --*/
+
+.bttn-white {
+    position: relative;
+    background: rgbrgb(200, 0, 206);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(181, 202, 73, 1) 0%, rgba(243, 98, 54, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: -o-linear-gradient(45deg, rgba(181, 202, 73, 1) 0%, rgba(243, 98, 54, 1) 100%);
+    background: linear-gradient(45deg, rgba(181, 202, 73, 1) 0%, rgba(243, 98, 54, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
+    overflow: hidden;
+    z-index: 1;
+    margin-right: 10px;
+    border: none;
+}
+
+.bttn-white img {
+    height: 20px;
+    margin-right: 5px;
+    margin-top: -5px;
+    display: inline-block;
+}
+
+
+
+.bttn-white:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    opacity: 1;
+}
+
+.bttn-white.active,
+.bttn-white:hover {
+    color: #ffffff;
+}
+
+.bttn-white.active:before,
+.bttn-white:hover:before {
+    opacity: 0;
+}
+
+.bttn-default,
+.bttn-white {
+    padding: 12px 30px;
+    background-color: #ffffff;
+    display: inline-block;
+    color: #f47a3a;
+    text-transform: uppercase;
+    border-radius: 50px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    font-size: 14px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    border: none;
+}
+
+.bttn-default .lnr,
+.bttn-white .lnr {
+    margin-right: 10px;
+}
+
+
+.bttn-default {
+    padding: 12px 40px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#482cbf+0,6ac6f0+100 */
+    background: rgbrgb(200, 0, 206); border:2px solid #fff;
+    /* Old browsers */
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(243, 98, 54, 1) 0%, rgba(181, 202, 73, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(243, 98, 54, 1) 0%, rgba(181, 202, 73, 1) 100%);
+    background: linear-gradient(45deg, rgba(243, 98, 54, 1) 0%, rgba(181, 202, 73, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
+    color: #ffffff;
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.bttn-default:hover {
+    color: #ffffff;
+    -webkit-box-shadow: 0 25px 50px -20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 25px 50px -20px rgba(0, 0, 0, 0.6);
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+.sq {
+    border-radius: 3px !important;
+}
+
+
+/*--about-us--*/
+#about_page .page-title img { border-radius:20px; width:140px; border: 2px solid #b04eb9; }
+
+/*-- 4. Helper-Classes --*/
+
+.section-padding-top {
+    padding-top: 120px;
+}
+
+.section-padding {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.angle,
+.overlay {
+    position: relative;
+    z-index: 1;
+}
+
+.overlay:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#482cbf+0,6ac6f0+100 */
+    background: rgb(111 33 110);
+    /* Old browsers */
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgb(255, 71, 235) 0%, rgb(100, 7, 94) 100%));
+    background: -o-linear-gradient(45deg, rgb(255, 71, 235) 0%, rgb(100, 7, 94) 100%);
+    background: background: linear-gradient(45deg, rgb(255, 71, 235) 0%, rgb(100, 7, 94) 100%);;
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
+    opacity: 0.8;
+    /* IE6-9 fallback on horizontal gradient */
+    z-index: -2;
+}
+
+.angle:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background: rgba(0, 0, 0, 0) -webkit-linear-gradient(left bottom, #ffffff 50%, transparent 50%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) -webkit-gradient(linear, left bottom, right top, color-stop(50%, #ffffff), color-stop(50%, transparent)) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) -o-linear-gradient(left bottom, #ffffff 50%, transparent 50%) repeat scroll 0 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(to right top, #ffffff 50%, transparent 50%) repeat scroll 0 0;
+    z-index: -1;
+}
+
+.dark-color {
+    color: #434345
+}
+
+.blue-color {
+    color: #a228ac;
+}
+
+.white-color {
+    color: #ffffff !important;
+}
+
+.gray-bg {
+    background-color: #f5f6ff;
+}
+
+/*-- 5. MainMenu-Area --*/
+
+.mainmenu-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    padding: 0px 140px 0px 0;
+    background:#fff;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.mainmenu-area:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+   
+    z-index: -1;
+    opacity: 0;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.mainmenu-area.affix {
+    position: fixed;
+    top: 0;
+}
+
+.mainmenu-area.affix:before {
+    opacity: 1;
+}
+
+.mainmenu-area .right-button {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+}
+
+.mainmenu-area .right-button a {
+    color: #ffffff;
+    padding: 10px 40px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.mainmenu-area .right-button a:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: #768ede;
+}
+
+.mainmenu-area ul.mainmenu {
+    text-align: center; margin-top:20px;
+    float: none;
+    display: block;
+}
+
+.mainmenu-area ul.mainmenu li {
+    float: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.mainmenu-area ul.nav.navbar-nav li a {
+    color: #000;
+    padding: 10px 2px;
+    text-transform: capitalize;
+    background: transparent;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    margin: 0 15px;
+	font-size:13px;
+}
+
+.mainmenu-area ul.nav.navbar-nav li a:hover,
+.mainmenu-area ul.nav.navbar-nav li.active a {
+    border-bottom-color: #ffffff;
+}
+
+.mainmenu-area .navbar-brand {
+    height: auto;
+    padding: 0 15px;
+}
+
+<!-- .mainmenu-area .navbar-brand img { -->
+    <!-- height: 85px; padding:10px 0px; -->
+<!-- } -->
+
+/*-- 6. Page-Title --*/
+
+.page-title .title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #8790af;
+    font-weight: 600;
+}
+
+.text-center.page-title .title:before,
+.page-title .title:after {
+    content: '';
+    width: 50px;
+    height: 1px;
+    display: inline-block;
+    background-color: #e1e1e1;
+    margin: 0 15px;
+    -webkit-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    transform: translateY(-4px);
+}
+
+/*-- 7. Home-Area --*/
+
+.home-area {
+    width: 100%;
+    background: url('images/index.jpg') no-repeat scroll center bottom / cover;
+    padding-top: 26vh;
+    color: #ffffff;
+    margin-bottom: 100px;
+  
+}
+
+.home-area .mobile-image {
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: -158px;
+}
+
+/*-- 8. Progress-Area --*/
+
+.progress-area {
+    background-image: url('images/progress-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    margin-top: 90px;
+    margin-bottom: 220px;
+}
+
+.progress-area .mobile-image {
+    margin-top: -90px;
+    margin-bottom: -153px;
+}
+
+/*-- 9. Video-Area --*/
+
+.video-area {
+    background-image: url('images/video-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto 100%;
+    margin-bottom: 120px;
+}
+
+.video-photo {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.video-photo > img {
+    width: 100%;
+}
+
+.video-area a.video-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+/*-- 10. Feature-Area --*/
+
+.feature-area {
+    color: #ffffff;
+    background-color: #f239cc;
+    background-image: url('images/feature-bg.png');
+    background-position: bottom -120px center;
+    background-repeat: no-repeat;
+    background-size: auto 94%;
+    margin-bottom: 142px;
+}
+
+.feature-area .page-title .title {
+    color: #ffffff;
+}
+
+.feature-area .mobile-image {
+    margin-bottom: -142px;
+}
+
+/*-- 11. Service-Box --*/
+
+.service-box {
+    position: relative;
+    padding-left: 100px;
+}
+
+.team-slide .owl-controls .owl-nav > div,
+.service-box .box-icon {
+    position: absolute; 
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 72px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#482cbf+0,6ac6f0+100 */
+    background: rgb(200, 0, 206);
+    /* Old browsers */
+    background: -webkit-linear-gradient(45deg, rgb(119, 34, 176) 0%, rgb(232, 44, 202) 100%);
+    background: -o-linear-gradient(45deg, rgb(119, 34, 176) 0%, rgb(232, 44, 202) 100%);
+    background: linear-gradient(45deg, rgb(119, 34, 176) 0%, rgb(232, 44, 202) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
+    overflow: hidden;
+    z-index: 1;
+    color: #f37c3a;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+.team-slide .owl-controls .owl-nav > div:hover,
+.service-box:hover .box-icon {
+    color: #ffffff;
+}
+
+.team-slide .owl-controls .owl-nav > div:before,
+.service-box .box-icon:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    opacity: 1;
+}
+
+.team-slide .owl-controls .owl-nav > div:hover:before,
+.service-box:hover .box-icon:before {
+    opacity: 0;
+}
+
+.service-box h4 {
+    margin-bottom: 10px;
+}
+
+/*-- 12. Testimonial-Area --*/
+
+.testimonial-area {
+    padding-top: 60px;
+    padding-bottom: 120px;
+}
+
+.team-box {
+    position: relative;
+    padding: 55px 30px 30px 30px;
+    -webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 40px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.team-box:hover {
+    -webkit-box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.1);
+}
+
+.team-box .team-image {
+    position: absolute;
+    top: -40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+    border: 5px solid #ffffff;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1)
+}
+
+.team-box h4 {
+    color: #f37c3a;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.team-box h6.position {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.team-slide .owl-controls .owl-nav > div {
+    position: absolute;
+    top: 50%;
+    left: auto;
+    right: 100%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+.team-slide .owl-controls .owl-nav > div.owl-next {
+    right: auto;
+    left: 100%;
+}
+
+/*-- 13. Gallery-Area --*/
+
+.gallery-area {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#482cbf+0,6ac6f0+100 */
+    background: rgbrgb(200, 0, 206);
+    /* Old browsers */
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(181, 202, 73, 1) 0%, rgba(243, 98, 54, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: -o-linear-gradient(45deg, rgba(181, 202, 73, 1) 0%, rgba(243, 98, 54, 1) 100%);
+    background: linear-gradient(45deg, rgb(255, 214, 254) 0%, rgb(203, 54, 244) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    color: #ffffff;
+}
+
+.gallery-slide .owl-stage-outer {
+    background: url('images/mobile-screen.png') no-repeat center right / auto 100%;
+
+}
+
+.gallery-slide .item {
+    margin: 58px 17px 70px 15px;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.gallery-slide .owl-controls {
+    position: static;
+    text-align: right;
+    padding-right: 80px;
+}
+
+.gallery-slide .owl-controls .owl-nav > div {
+    display: inline-block;
+    background-color: #ffffff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 70px;
+    color: rgba(72, 44, 191, 1);
+    margin: 5px;
+}
+
+.gallery-slide .owl-controls .owl-dots .owl-dot {
+    display: inline-block;
+    margin: 3px;
+}
+
+.gallery-slide .owl-controls .owl-dots .owl-dot span {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    opacity: 0.5;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.gallery-slide .owl-controls .owl-dots .owl-dot.active span {
+    opacity: 1;
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+}
+
+/*-- 14. Download-Area --*/
+
+.download-area {
+    background-image: url('images/download-bg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    color: #ffffff;
+}
+
+.download-area .mobile-image {
+    margin-top: -106px;
+    margin-bottom: -200px;
+}
+
+/*-- 15. Price-Area --*/
+
+.price-box {
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    color: #8790af;
+    -webkit-box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.1);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.price-box:hover {
+    -webkit-box-shadow: 0 0 50px -15px #4d43c6;
+    box-shadow: 0 0 50px -15px #4d43c6;
+}
+
+.price-box .price-header {
+    background-color: #f2f3fc;
+    padding: 40px;
+    color: #768ede;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#482cbf+0,6ac6f0+100 */
+    background: rgb(200, 0, 206);
+    /* Old browsers */
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(72, 44, 191, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: -o-linear-gradient(45deg, rgba(72, 44, 191, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: linear-gradient(45deg, rgba(72, 44, 191, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.price-box .price-header:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f3fc;
+    z-index: -1;
+    opacity: 1;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.price-box:hover .price-header {
+    color: #ffffff;
+}
+
+.price-box:hover .price-header:before {
+    opacity: 0;
+}
+
+
+.price-box .price-header .price-icon {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.price-box .price-header h4 {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.price-box .price-body {
+    padding: 40px;
+}
+
+.price-box .price-body ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.price-box .price-rate {
+    color: #768ede;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+.price-box .price-rate sup {
+    top: -20px;
+    font-size: 26px;
+}
+
+.price-box .price-rate .rate {
+    font-size: 56px;
+}
+
+.price-box .price-footer {
+    margin-bottom: 40px;
+}
+
+.price-box .price-footer .bttn-white {
+    padding: 13px 50px;
+}
+
+.price-box .price-footer .bttn-white:before {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 100px;
+    left: 2px;
+    top: 2px;
+}
+
+/*-- 16. Questions-area --*/
+
+.questions-area {
+    background-color: #f5f6ff;
+}
+
+.toggole-boxs {
+    margin-top: -20px;
+}
+
+.toggole-boxs h3 {
+    font-size: 18px;
+    background-color: #ffffff;
+    margin-bottom: 0;
+    margin-top: 20px;
+    outline: none;
+    padding: 20px 30px 20px 60px;
+    color: #434345;
+    border-left: 5px solid #f37c3a;
+    cursor: pointer;
+    position: relative;
+}
+
+.toggole-boxs h3:before,
+.toggole-boxs h3:after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    width: 10px;
+    height: 2px;
+    background-color: #434345;
+}
+
+.toggole-boxs h3:before {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.toggole-boxs h3.ui-state-active:before {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg)
+}
+
+.toggole-boxs div {
+    background-color: #ffffff;
+    padding: 0 30px 20px 60px;
+    border-left: 5px solid #f37c3a;
+}
+
+/*-- 17. Subscribe-Form --*/
+
+.subscribe-area {
+    background: url('images/subscribe-bg.jpg') no-repeat scroll center center / cover;
+}
+
+.subscribe-form {
+    background-color: rgba(255, 255, 255, .2);
+    padding: 60px;
+    border-radius: 5px;
+}
+
+.subscribe-form form {
+    position: relative;
+}
+
+.subscribe-form form .control {
+    width: 100%;
+    height: auto;
+    padding: 15px 20px 15px 30px;
+    border-radius: 100px;
+    border: 1px solid #f37c3a;
+}
+
+.subscribe-form form .bttn-white {
+    width:100%; margin-top:25px;
+    right: 0;
+    top: 0;
+    margin-right: 0;
+}
+
+/*-- 18. Footer-Area --*/
+
+.footer-box {
+    text-align: center;
+
+}
+
+.footer-box .box-icon {
+    width: 75px;
+    height: 75px;
+    margin: auto auto 30px auto;
+    text-align: center;
+    line-height: 75px;
+    color: #ffffff;
+    font-size: 20px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#482cbf+0,6ac6f0+100 */
+    background: rgb(200, 0, 206);
+    /* Old browsers */
+    /* FF3.6-15 */
+    background: -webkit-linear-gradientlinear-gradient(45deg, rgb(119, 34, 176) 0%, rgb(232, 44, 202) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: -o-linear-gradientlinear-gradient(45deg, rgb(119, 34, 176) 0%, rgb(232, 44, 202) 100%);
+    background: linear-gradientlinear-gradient(45deg, rgb(119, 34, 176) 0%, rgb(232, 44, 202) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
+    border-radius: 100%;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.footer-box .box-icon:before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    border: 2px solid #ffffff;
+    border-radius: 100%;
+    z-index: -1;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s
+}
+
+.footer-box:hover .box-icon {
+    color: #f37c3a;
+}
+
+.footer-box:hover .box-icon:before {
+    background-color: #ffffff;
+}
+
+.footer-bottom {
+    padding: 20px 0;
+    background-color: #f5f6ff;
+    border-top: 1px solid #f37c3a;
+}
+
+.footer-bottom .footer-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.footer-bottom .footer-menu ul li {
+    display: inline-block;
+}
+
+.footer-bottom .footer-menu ul li a {
+    padding: 10px;
+    color: #8790af
+}
+
+.footer-bottom .footer-menu ul li a:hover {
+    color: #f37c3a;
+}
+
+/*-- 19. ScrollUp-Button --*/
+
+#scrollUp {
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+    color: #a228ac;
+}
+
+.preloader {
+    background-color: #ffffff;
+    bottom: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999999;
+}
+
+.preloader span {
+    background: rgb(212, 31, 51);
+    background: -webkit-linear-gradient(45deg, rgba(255, 214, 254) 0%, rgba(203, 54, 244) 100%);
+    background: -o-linear-gradient(45deg, rgba(255, 214, 254) 0%, rgba(203, 54, 244) 100%);
+    background: linear-gradient(45deg, rgb(255, 214, 254) 0%, rgb(203, 54, 244) 100%);;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f74edd', endColorstr='#c01da7', GradientType=1);
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    margin: auto;
+    -webkit-animation: mymove 1.5s infinite linear;
+    animation: mymove 1.5s infinite linear;
+}
+
+@-webkit-keyframes mymove {
+    0 {
+        -webkit-box-shadow: 0 0 0 0 rgba(94, 136, 252, 0.6), 0 0 0 0 rgba(243, 98, 54, 0.6);
+        box-shadow: 0 0 0 0 rgba(94, 136, 252, 0.6), 0 0 0 0 rgba(243, 98, 54, 0.6);
+    }
+    25% {
+        -webkit-box-shadow: 0 0 0 10px rgba(94, 136, 252, 0.6), 0 0 0 10px rgba(243, 98, 54, 0.6);
+        box-shadow: 0 0 0 10px rgba(94, 136, 252, 0.6), 0 0 0 10px rgba(243, 98, 54, 0.6);
+    }
+    50% {
+        -webkit-box-shadow: 0 0 0 10px rgba(94, 136, 252, 0.6), 0 0 0 20px rgba(243, 98, 54, 0.6);
+        box-shadow: 0 0 0 10px rgba(94, 136, 252, 0.6), 0 0 0 20px rgba(243, 98, 54, 0.6);
+    }
+    75% {
+        -webkit-box-shadow: 0 0 0 10px rgba(94, 136, 252, 0.6), 0 0 0 10px rgba(94, 136, 252, 0.6);
+        box-shadow: 0 0 0 10px rgba(94, 136, 252, 0.6), 0 0 0 10px rgba(243, 98, 54, 0.6);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(94, 136, 252, 0.6), 0 0 0 0 rgba(243, 98, 54, 0.6);
+        box-shadow: 0 0 0 0 rgba(94, 136, 252, 0.6), 0 0 0 0 rgba(243, 98, 54, 0.6);
+    }
+}
+
+@keyframes mymove {
+    0 {
+        -webkit-box-shadow: 0 0 0 0 rgba(94, 136, 252, 0.6), 0 0 0 0 rgba(243, 98, 54, 0.6);
+        box-shadow: 0 0 0 0 rgba(243, 98, 54, 0.6), 0 0 0 0 rgba(243, 98, 54, 0.6);
+    }
+    25% {
+        -webkit-box-shadow: 0 0 0 10px rgba(243, 98, 54, 0.6), 0 0 0 10px rgba(243, 98, 54, 0.6);
+        box-shadow: 0 0 0 10px rgba(243, 98, 54, 0.6), 0 0 0 10px rgba(243, 98, 54, 0.6);
+    }
+    50% {
+        -webkit-box-shadow: 0 0 0 10px rgba(243, 98, 54, 0.6), 0 0 0 20px rgba(243, 98, 54, 0.6);
+        box-shadow: 0 0 0 10px rgba(243, 98, 54, 0.6), 0 0 0 20px rgba(243, 98, 54, 0.6);
+    }
+    75% {
+        -webkit-box-shadow: 0 0 0 10px rgba(94, 136, 252, 0.6), 0 0 0 10px rgba(94, 136, 252, 0.6);
+        box-shadow: 0 0 0 10px rgba(243, 98, 54, 0.6), 0 0 0 10px rgba(243, 98, 54, 0.6);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(94, 136, 252, 0.6), 0 0 0 0 rgba(94, 136, 252, 0.6);
+        box-shadow: 0 0 0 0 rgba(243, 98, 54, 0.6), 0 0 0 0 rgba(243, 98, 54, 0.6);
+    }
+}
+
+/*-- 20. Blog-Post --*/
+
+.site-header {
+    background: rgb(200, 0, 206);
+    background: -webkit-linear-gradient(45deg, rgba(72, 44, 191, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(72, 44, 191, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: linear-gradient(45deg, rgba(72, 44, 191, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
+    color: #ffffff;
+    padding: 180px 0 120px;
+}
+
+.site-header a {
+    color: #ffffff;
+}
+
+.breadcrumb {
+    background: none;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 0;
+}
+
+
+.post-single:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.post-single {
+    padding: 30px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.single-post .post-single {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.single-post .post-single .post-media {
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.post-single.sticky .post-media {
+    width: 55%;
+    float: left;
+    margin-right: 60px;
+}
+
+.post-single .post-media {
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.post-single .post-media img {
+    width: 100%;
+}
+
+.post-single .post-meta {
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.post-single .post-body .post-meta .post-tags {
+    float: left;
+}
+
+.post-single .post-body .post-meta .post-date {
+    float: right;
+}
+
+.post-single .post-body h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.post-single .post-body .read-more {
+    margin-top: 10px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #768ede;
+}
+
+.post-single .post-body .read-more:after {
+    content: '\e87a';
+    font-family: 'Linearicons-Free';
+    margin-left: 5px;
+}
+
+/*-- 21. Pagination --*/
+
+.pagination .nav-links {
+    padding: 20px;
+    -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 80px;
+    width: 100%;
+}
+
+.pagination .nav-links .page-numbers {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    border-radius: 50%;
+}
+
+.pagination .nav-links .page-numbers:hover {
+    color: rgb(200, 0, 206)
+    ;
+    background-color: #f5f6ff;
+
+}
+
+.pagination .nav-links .page-numbers.current {
+    background: rgb(200, 0, 206);
+    background: -webkit-linear-gradient(45deg, rgba(72, 44, 191, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(72, 44, 191, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: linear-gradient(45deg, rgba(72, 44, 191, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
+    color: #ffffff;
+}
+
+.post-single blockquote {
+    padding: 50px 160px;
+    text-align: center;
+    -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+    font-size: 26px;
+    line-height: 1.6em;
+    border: none;
+    color: #626264;
+    background-color: #f4f4f4;
+    border: 30px solid #ffffff;
+    font-style: italic;
+}
+
+/*-- 22. Comment-Respond --*/
+
+.comment-respond h4,
+.comments-area .comment-heading {
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: #434345;
+}
+
+.comments-list,
+.comments-list ul {
+    list-style: none;
+}
+
+.comments-list .comment {
+    position: relative;
+    padding-left: 130px;
+}
+
+.comments-list .comment .comment-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 3px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.comments-list .comment .comment-content .comment-header {
+    color: #434345
+}
+
+.comments-list .comment .comment-content .comment-header h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.comments-list li li .comment .comment-pic {
+    width: 80px;
+    height: 80px;
+}
+
+.comments-list li {
+    margin-bottom: 30px;
+}
+
+/*-- 23. Form-Stype --*/
+
+.form-control {
+    border-radius: 2px;
+    padding: 15px 20px;
+    height: auto;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-double .box {
+    width: calc(50% - 15px);
+    float: left;
+}
+
+.form-double .box.last {
+    float: right;
+}
+@media (min-width: 992px) {
+			#main_hdr{
+			   margin-top: 64px;
+				margin-left: 44px;
+				position: absolute;
+				top: -54px;
+				color: #fff;
+				font-size: 23px;
+				font-weight: 900;
+				font-family: 'Josefin Sans', sans-serif;
+	}
+	
+	#main_para{
+		    font-size: 14px;
+			width: 300px;
+			position: absolute;
+			top: 37px;
+			left: 145px;
+			color: #6f266f;
+			font-weight: 700;
+			font-family: 'Josefin Sans', sans-serif;
+	}
+	
+	
+	
+	}
+
+
+@media (max-width: 575.98px) {
+	
+	
+		.mainmenu-area{
+			    background:#f7f7f7 !important; !important;
+				padding: 0px 21px 0px 0 !important;
+		}
+		
+		.mainmenu-area:before{
+	    background: #f7f7f7 !important;
+	}
+	
+}
+
+.mainmenu-area ul.mainmenu {
+   text-align: right;
+    margin-top: 20px;
+    float: none;
+    display: block;
+    margin-right: -68px !important;
+    font-size: 14px;
+}
+
+	</style>
+</head>
+
+<body data-spy="scroll" data-target=".mainmenu-area">
+    <!-- Preloader-content -->
+    <!-- <div class="preloader"> -->
+        <!-- <span><i class="lnr lnr-sun"></i></span> -->
+    <!-- </div> -->
+    <!-- MainMenu-Area -->
+	  <nav class="mainmenu-area" data-spy="affix" data-offset-top="200">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary_menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="images/f_logo.png" alt="Logo"></a><span id="main_hdr">FWORLD GROUP</span><p style="font-size: 14px; width: 300px;" id="main_para">(ISO 9001:2015 CERTIFIED)</p>
+				
+            </div>
+			<!-- <h3>Fworld Group</h3> -->
+				<!-- <p>ISO 9001:2008 CERTIFIED</p> -->
+            <div class="collapse navbar-collapse" id="primary_menu">
+                <ul class="nav navbar-nav mainmenu">
+				
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about_us.html">ABOUT US</a></li>
+					
+					 <li><a href="Agency_request.html">FAMILY REQUEST</a></li>
+					 
+                    <li><a href="privacypolicy.html">PRIVACY POLICY</a></li>
+                    <li><a href="termsandcondition.html">TERMS & CONDITIONS</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+					
+					<li><a href="https://play.google.com/store/apps/details?id=com.fworld.group" target="_blank"><img src="images/playstore.png" style="width: 92px;"></a></li>
+					<li><a href="#"><img src="images/ios_h.png" style="width: 92px;"></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- MainMenu-Area-End -->
+    <!-- Home-Area -->
+    <header class="home-area overlay" id="home_page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 hidden-sm col-md-5">
+                    <figure class="mobile-image wow fadeInUp" data-wow-delay="0.2s">
+                        <img src="images/header-mobile.png" alt="">
+                    </figure>
+                </div>
+                <div class="col-xs-12 col-md-7">
+                    <div class="space-80 hidden-xs"></div>
+                    <h1 class="wow fadeInUp" data-wow-delay="0.4s">Terms & Condition.</h1>
+                    <p>
+						Welcome to FWORLD GROUP! Thank you for downloading our app and visiting our
+						website, Our company with its registered address at MUMBAI “MAHARASTRA”, Now
+						keep reading as our legal team have told us we need to provide you will all of the
+						information below regarding rights and condition to use our services.
+						
+						<br><br>
+						
+						This is END USER LICENCE AGGREMENT (EULA) or TERMS OF SERVICES is the
+						contract between FWORLD GROUP (FWORLD, we, us or our) and (“YOU”) as
+						individual user,<br>
+						
+						By using the Services, you agree to be bound by these Terms. From time to time, we may
+						modify or update these Terms, which would become effective upon posting through our
+						Services. If you use the Services after any such change, you accept these Terms as
+						modified.
+						<br><br>
+						
+						In other words: By using anything offered by FWORLD, you automatically agree to this legal
+						agreement. You also accept any updated version of this agreement by continuing to use the
+						Services.
+						<br><br>
+						​
+						<strong>IF AT ANY TIME YOU DO NOT AGREE TO ANY OF THE TERMS, YOU MAY NOT USE
+						THE SERVICES AND MUST IMMEDIATELY QUIT YOUR USE OF ALL SERVICES AND
+						UNINSTALL OUR APPLICATION . IF YOU WANT TO HAVE A COPY OF THIS EULA AND
+						PRIVACY POLICY OF FWORLD, CONTACT US ON: <a href="#" style="color:#fff;"><u>legal@fworldgroup.com</u></a></strong>
+					</p>
+                    
+					
+					
+					<h3>MORE DETAILS ABOUT END USER LICENCE AGREEMENT (EULA) OR TERMS OF SERVICES.</h3>
+						<p>
+							1. This application software is licensed, it is not sold. All software, files etc are
+							property of FWORLD GROUP.
+							<br>
+							2. The use of the service may be subject to separate third party terms of service
+							and fees, including, without limitation, your mobile network operator’s (the
+							“Carrier”) terms of service including fees charged for data usage and overage
+							, which are your responsibility;
+							<br>
+							3. The terms for a legally binding agreement between you and us. Please take
+							the time to read agreement carefully. If you are under age of 18, you may only
+							use the services with the consent of your parents or any legal guardian.
+							<br>
+							4. USE OF ANY COPYRIGHTED SOUNDS, SONG, KAREOKE, LYRICS ETC
+							ARE CAN BE THE ISSUE OF COPYRIGHT AND WE ARE NOT
+							RESPONSIBLE FOR IT “IF YOU WANT TO USE THEM THEN USE AT
+							YOUR OWN RISK”.<br><br>
+
+							<strong>WE ARE NOT PROMOTING ANY SEXUAL HARASSMENT, ABUSING OR ANY TYPE
+							OF VULGARITY. IF FWORLD CAUGHT YOU BY PROMOTING ANY TYPE OF
+							VULGARITY OR SEXUAL HARASSMENT OR ANY TYPE OF ILLEGAL ACTIVITY IN
+							<br><br>
+							OUR APP YOUR ID MAY GET BAN PERMANENTLY AND ACTION CAN ALSO BE
+							TAKEN AS PER SECTION 509 (INDIAN LAW).</strong>
+						</p>
+						
+						
+						<h3>USER CONTENT</h3>
+						<p>
+							This is “USER CONTENT” means information, data or materials (content, software,
+							images, text, graphics, illustrations, logos, patents, trademarks, service marks,
+							watermark, photograph, audio, videos, banners), are totally protected as per LAW OF
+							INDIAN CONSTITUTION under article 14 of copyright act.
+							<br><br>
+							You acknowledge and agree that we may generate revenues, increase goodwill or
+							otherwise increase our value from your use of the Services, including, by way of
+							example and not limitation, through the sale of advertising, sponsorships, promotions,
+							usage data and Gifts (defined below), and except as specifically permitted by us in
+							these Terms or in another agreement you enter into with us, you will have no right to
+							share in any such revenue, goodwill or value whatsoever. You further acknowledge that,
+							except as specifically permitted by us in these Terms or in another agreement you enter
+							into with us, you (i) have no right to receive any income or other consideration from any
+							User Content (defined below) including in any User Content created by you, and (ii)are
+							prohibited from exercising any rights to monetize or obtain consideration from any User
+							Content within the Services or on any third party service ( e.g. , you cannot claim User
+							Content that has been uploaded to a social media platform such as YouTube for
+							monetization).<br>
+							<strong>WE ARE NOT RESPONSIBLE FOR ANY COPYRIGHT ISSUE THROUGH ANY MUSICAL WORK LIKE
+							LYRIC, MUSIC, SONGS OR ANY OF THINGS WHICH IS USE BY USER FROM OUTSIDE THE APP.</strong>
+						</p>
+						
+						
+						<h3>COMMUNITY GUILDELINES</h3>
+						<p>1. These Community Guidelines govern your access and use our website
+						(www.fworldgroup.com) and our application (FWORLD APP).
+						<br>
+						2. This community convention is set to strengthen the community management
+						of FWORLD APP and provide users a healthy and harmonious platform for
+						both talent show and appreciation. FWORLD APP reserve the right to control
+						violations in content and behaviour
+						<br>
+						3. This convention is applicable to all the community content including but not
+						limited to broadcasting, videos, picture, user behaviour, etc
+						<br>
+						4. The user could make an appeal against the punishments
+						<br>
+						5. Fworld reserves the right of final explanation of all the punishment.
+						<br>
+						6. Our team of moderators around the world, working 24 / 7 to reacting to user
+						reports. Users found to be in violation of the Guidelines, are liable to prompt
+						suspension or restriction from the Services; within a 24 hour window. In
+						addition, further scrutiny and escalation to Indian law enforcement agencies
+						will ensue in order to aid criminal and wellbeing related examinations to the
+						furthest reaches of the law, without damaging user privacy.</p>
+						
+						<strong>A. You are encouraged to;</strong>
+						1. Use the Services with your friends; tell them about the Site and
+						Application if they do not know them yet;
+						2. Communicate friendly with other users of the Application;
+						3. Make connections with other users and have and create good
+						environment;
+						4. Use our services to show your hidden talent around the world
+						
+						<strong>B. You are prohibited to;</strong>
+						
+						1. Do anything illegal on or through the Services
+						2. Insulting the government, country or any state.
+						3. Endangering state security, divulging state secrets, subverting state power
+						and undermining national unity
+						4. Harming national honour and interests.
+						5. Spreading violence, terror or abetting the commission of crimes.
+						6. Share content related to minors that may cast negative effect against
+						minors.
+						7. Share content that violates another person’s contractual, personal,
+						intellectual property or other rights.
+						8. Share content which is not suitable for the user group of the Services, or is
+						of negative social effects.
+						9. Share content that is directly threatening someone’s physical or financial
+						state.
+						10. Distribute malicious content.
+						11. Attempt to steal or illegitimately alter anyone’s Account or data, or
+						undermine any part of the Services or services provided by other persons.
+						12. Organize and participate in raids or other forms of harassment.
+						13. Do anything related to Spamming.
+						14. Promoting of sexual toys, aphrodisiac or posting misleading part time job
+						recruitment information
+						15. Show other behaviour involving pornography, politics, gambling or drugs
+						
+						<h3>ACCOUNT INFORMATION</h3>
+						<p>1. You need to be at least 18+ in term to create account in FWORLD. And if
+						you are not then please consult to your parents or any legal guardian
+						before creating ID on FWORLD.
+						<br>
+						
+						2. You cannot use any offensive name or email address.
+						<br>
+						3. You cannot use any other email id or name which is not belongs to you.
+						<br>
+						4. You are prohibited from using another person’s account or registration
+						information for the Services without their permission.
+						<br>
+						5. You agree to notify us immediately if you believe the confidentiality of your
+						log-in credentials has been compromised or if you suspect any
+						unauthorized use of your Account.
+						<br>
+						6. You can delete your account at any time, either directly or through a
+						request to us in appsupport@fworldgroup.com
+						<br>
+						7. You are primarily responsible for maintaining the confidentiality of your
+						log-in credentials (including without limitation your account number (ID),
+						username, password) and are fully responsible for all activities that occur
+						through the use of your credentials or otherwise on or through your
+						Account.
+						<br>
+						8. You agree that we will not be liable for any loss or damage arising from
+						unauthorized use of your log-in credentials.
+						<br>
+						9. If you lose or forget the password or other log-in confidential of your
+						Account, you may apply to recover your account by reporting to us and
+						following the instructions given by our staff.
+						<br>
+						10. If we are unable to identify whether the applicant is the correct and
+						legitimate user of the Account. Therefore, we cannot guarantee that your
+						Account is always retrievable, and we cannot prevent imposters who
+						assume the identity of you and retrieve the Account fraudulently (although
+						we will make every endeavor to identify such imposters). On this ground,
+						we shall not be held liable for any loss and damage incurred due to such
+						failure of retrieval, or imposture or fraud.
+						<br>
+						11. We retain the ownership of the Account. You enjoy only the right to use
+						your Account during the period that you maintain it with us. Your Account
+						shall be exclusively used by you. Any form of lending, borrowing, renting,
+						transferring, gifting or selling of such Account is prohibited and shall be
+						null and void. You are liable for any and all activities done using your
+						Account, even if such activities are not actually conducted by you. If we
+						detect any inconsistency between the actual user of an Account and the
+						person who registered it, or it is in dispute on who shall be the legitimate
+
+						user of an Account, we have the right to recover, withdraw, suspend
+						(freeze) or terminate such Account in our discretion, without any notice or
+						any liability to any person. The loss and damage arising thereof, including
+						but not limited to the loss of communication, data and virtual properties,
+						shall be assumed solely by the user.
+						
+						<br>
+						12. For safety, compliance, operational or other concerns, and on a
+						reasonable ground (for example, the Account is inactive for a long period
+						and is wasting service resources), we reserve the right to suspend
+						(freeze), terminate or reclaim your Account in our sole discretion,
+						temporarily or permanently, with or without notice, giving reasons or not,
+						and without any liability to you.
+						<br>
+						13. FWORLD may use carrier distributed mobile messaging (SMS) to verify
+						ownership of a registered mobile phone number.</p>
+						
+						<h3>FEE’S</h3>
+						<p>We will not charge you a fee to use the basic functionality of the Services.
+						However, you may have to pay a fee to use certain features of the Services or to
+						obtain Virtual Currency or Virtual Items. The price for utilizing these features or
+						obtaining such Virtual Currency or Virtual Items will be displayed on the Services.</p>
+						
+						<h3>GOVERNING LAW</h3>
+						<p>By accepting this Agreement or becoming a Registered User, you agree that the
+						laws of India without regard to principles of conflict of laws thereof and regardless
+						of your location, will govern this Agreement and any dispute of any sort that
+						might arise between you and the Company.</p>
+						
+						<h3>WITHDRAWALS</h3>
+						<p>1. You can withdrawal 10$ to 500$ in a week
+						<br>
+						2. You can withdrawal your income through PAYTM, BANK ACCOUNT,
+						UPI OR PAYPAL (user are liable to pay transaction fee).
+						<br>
+						3. Withdrawal request may take maximum 10-15days to complete
+						<br>
+						4. If your given information for withdrawal is wrong, then you are
+						responsible for it, so fill withdrawal request carefully before submitting
+						to us, for any more information contact us on
+						appsupport@fworldgroup.com</p>
+						
+						
+						<h3>FEEDBACK</h3>
+						<p>1. While we are continually working to develop and evaluate our own
+						product ideas and features, we know we don&#39;t have all the answers.
+						<br>
+						2. We appreciate your all feedback, comment or suggestions. We try our
+						best to real your all feedback and revert as soon as possible.
+						<br>
+						3. You are responsible for whatever material is submitted by you,
+						including its legality, reliability, appropriateness, originality, and
+						copyright.
+						<br>
+						4. Our aim is to reply user feedback as soon as possible, we can take 24-
+						48hr. to reply and we are keep on speeding it up by the time.</p>
+						
+						
+						<h3>SUBSCRIBTIONS</h3>
+						<p>We have (V.I.P) to be unique and have more privilege from other user and to enjoy use
+						of the Service without “advertisement” you must purchase a subscription to the Service.
+						If you purchase a subscription to the Service, then the following terms apply:
+						1. Automatic Renew of Monthly Subscriptions - By purchasing a monthly
+						subscription of the service, you agree that, once your subscription expires,
+						your subscription will automatically renew for successive, monthly periods, as
+						you may select, unless and until you cancel your subscription.
+						<br>
+						2. Recurring Charges - You authorize “GOOGLE” or either party&#39;s service
+						provider, as applicable, to process your payments for any renewal
+						subscription. Subscription prices will be displayed to you at the time of
+						purchase. Your payments will be processed for any renewal subscription
+						using the same billing cycle as your current subscription. In other words, if
+						your payment is processed for your current subscription on the 1st of each
+						month, then your payment will continue to be processed on that day for any
+						renewal subscription. Additional terms and conditions may apply upon
+						renewal, and subscription fees may change at any time, to the fullest extent
+						permitted under applicable law.
+						<br>
+						3. Cancellation - You may cancel your subscription to the service at any time by
+						selecting the applicable option within the GOOGLE PLAY, as applicable. If,
+						you want to obtain a refund in connection with any subscription, then you
+						must contact “GOOGLE”, “FWORLD”, will have no liability to you whatsoever
+						for any refunds in connection with subscriptions.</p>
+						
+						<h3>CONTACT US</h3>
+						<p>WEBSITE – <a href="#" style="color:#fff;"><u>www.fworldgroup.com</u></a><br>
+						EMAIL ID – legal@fworldgroup.com<br>
+						ADDRESS - MUMBAI, MAHARASTRA INDIA</p>
+						
+                    <div class="space-10"></div>
+                    
+                    <div class="space-10"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Home-Area-End -->
+    <!-- About-Area -->
+    <section class="section-padding" id="about_page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-10 col-md-offset-1">
+                    <div class="page-title text-center">
+                        <img src="images/about-logo.png" alt="About Logo">
+                        <div class="space-0"></div>
+                        <h3 class="title">PAID SERVICES OF FWORLD</h3>
+                        <h5></h5>
+                        
+                        <div class=""></div>
+                        <ul>
+                        <li>As between you and us, all content, software, images, text, graphics, illustrations, logos, patents, trademarks, service marks, watermark, photograph, audio, videos, banner, on all look and feel of the service, and all intellectual property are licensed or owned by FWORLD, it being understood that you or your licensors will own any User content you upload or transmit through the Services. Use of the FWORLD Content or materials on the Services for any purpose not expressly permitted by </li>
+						
+						<li>Paid Services can be purchased by credit card or debit cards, and are processed through our third-party Internet payment service provider inside the app. “DO NOT PURCHASE ANY SERVIES FROM OUTSIDE OF FWORLD, IF YOU ARE DOING IT SO YOU ARE ONLY RESPONSIBLE FOR ANY TYPE OF LOSS AND YOUR ID MAY GET SUSPENDED FROM OUR APP”</li> 
+						
+                   <li>PAYMENTS ARE NONREFUNDABLE AND THERE ARE NO REFUNDS OR CREDITS FOR PARTIALLY USE. We reserve the right (but not the obligation), at our sole discretion, to refund the purchased amount if there is a technical error to the purchased service.  </li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About-Area-End -->
+    <section class="section-padding" id="about_page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-10 col-md-offset-1">
+                    <div class="page-title text-center">
+                        <img src="images/about-logo.png" alt="About Logo">
+    <div class="space-0"></div>
+                        <h3 class="title">CONTENTS</h3>
+                        <h5></h5>
+                        
+                        <div class=""></div>
+                        <p>Some of FWORLD services provided by us require payment (“Paid Services”), such as the digital contents used for using our privileges. When you use such services, you will required to pay us some charges. We will notify you in advance in the event any FWORLD Services that is used by you in accordance with these terms of use will be in this Paid Service. Access to a Paid services is conditional upon you by confirming this agreement and to payment of the relevant charge for such paid services. For avoidance of doubt, we shall be under no obligation to provide any Paid Services to you if you do not pay the charges for the same.</p>
+<p>You acknowledge and agree that we may generate revenues, increase goodwill or otherwise increase our value from your use of the Services, including, by way of example and not limitation, through the sale of advertising, sponsorships, promotions, usage data and Gifts(defined below), and except as specifically permitted by us in these Terms or in another agreement you enter into with us, you will have no right to share in any such revenue, goodwill or value whatsoever. You further acknowledge that, except as specifically permitted by us in these Terms or in another agreement you enter into with us, you (i) have no right to receive any income or other consideration from any User Content (defined below) including in any User Content created by you, and (ii) are prohibited from exercising any rights to monetize or obtain consideration from any User Content within the Services or on any third party service ( e.g. , you cannot claim User Content that has been uploaded to a social media platform such as YouTube for monetization).</p>                    
+                   <h4>WE ARE NOT RESPONSIBLE FOR ANY COPYRIGHT ISSUE THROUGH ANY MUSICAL WORK LIKE LYRIC, MUSIC, SONGS OR ANY OF THINGS WHICH IS USE BY USER FROM OUTSIDE THE APP. </h4>
+                    <p>You acknowledge and agree that when you view content provided by others on the Services, you are doing so at your own risk. The content on our Services is provided for general information only. It is not intended to amount to advice on which you should rely. You must obtain professional or specialist advice before taking, or refraining from, any action on the basis of the content on our Services.
+We make no representations, warranties or guarantees, whether express or implied, that any FWORLD Content (including User Content) is accurate, complete or up to date. Where our Services contain links to other sites and resources provided by third parties, these links are provided for your information only. We have no control over the contents of those sites or resources. Such links should not be interpreted as approval by us of those linked websites or information you may obtain from them. You acknowledge that we have no obligation to pre-screen, monitor, review, or edit any content posted by you and other users on the Services (including User Content).
+</p>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <!-- Progress-Area -->
+   
+    <!-- Progress-Area-End -->
+    <!-- Video-Area -->
+   
+    <!-- Video-Area-End -->
+    <!-- Feature-Area -->
+  
+    <!-- Feature-Area-End -->
+    <!-- Testimonial-Area -->
+   
+    <!-- Testimonial-Area-End -->
+    <!-- Gallery-Area -->
+    
+    <!-- Gallery-Area-End -->
+    <!-- How-To-Use -->
+    
+    <!-- How-To-Use-End -->
+    <!-- Download-Area -->
+   
+    <!-- Download-Area-End -->
+    <!--Price-Area -->
+   
+    <!--Price-Area-End -->
+    <!--Questions-Area -->
+    
+    <!--Questions-Area-End -->
+    <!-- Subscribe-Form -->
+
+    <!-- Subscribe-Form-Area -->
+    <!-- Footer-Area -->
+    <footer class="footer-area" id="contact_page">
+       
+        <!-- Footer-Bootom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p>© Fworld Group | All right reserved <a href="privacypolicy.html">Privacy Policy</a> and <a href="termsandcondition.html">Terms of Service</a></p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <div class="space-30 hidden visible-xs"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-Bootom-End -->
+    </footer>
+    <!-- Footer-Area-End -->
+    <!--Vendor-JS-->
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/vendor/jquery-ui.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <!--Plugin-JS-->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/ajaxchimp.js"></script>
+    <script src="js/scrollUp.min.js"></script>
+    <script src="js/magnific-popup.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <!--Main-active-JS-->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
