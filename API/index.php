@@ -108,6 +108,8 @@ error_reporting(1);
 		if($_GET["p"]=="selected_videochane")
 		{
 			selected_videochane();
+		}elseif($_GET["p"]=="getcurrenttimendate"){
+			getcurrenttimendate();
 		}
 	   else
 		if($_GET["p"]=="all_gifts_list")
@@ -2470,15 +2472,26 @@ function end_time_log()
             $task_id=$event_json['daily_task_id'];
 	        $add_silver_coin=1; 
 	        $udtr_task_position=$event_json['task_position'];
+			if($udtr_task_position<6){
+				$qrry_get=" SELECT * FROM `daily_task` WHERE daily_task_id=$task_id ";
+				$resd=mysqli_query($conn,$qrry_get)or die(mysqli_error($conn));
+					$daily_task_data=mysqli_fetch_assoc($resd); 
+				 
+				 if($daily_task_data){
+				   $task_count=$daily_task_data['daily_task_total_target'];	
+				   $add_silver_coin=$daily_task_data['daily_task_par_target'];
+				 }  
+			}else{
 	        
-	         $qrry_get=" SELECT * FROM `daily_task` WHERE daily_task_id=$task_id ";
+	         $qrry_get=" SELECT * FROM `daily_vip_task` WHERE daily_vip_task_id=$task_id ";
 			 $resd=mysqli_query($conn,$qrry_get)or die(mysqli_error($conn));
  		   	 $daily_task_data=mysqli_fetch_assoc($resd); 
 		  	
 		  	if($daily_task_data){
-		  	  $task_count=$daily_task_data['daily_task_total_target'];	
-		  	  $add_silver_coin=$daily_task_data['daily_task_par_target'];
-		  	}  
+		  	  $task_count=$daily_task_data['daily_vip_task_total_target'];	
+		  	  $add_silver_coin=$daily_task_data['daily_vip_task_per_target'];
+		  	} 
+		} 
 
 	        $sql1="SELECT * FROM `user_daily_task_record` WHERE udtr_daily_task_id='$task_id' AND udtr_fb_id='$fb_id' AND udtr_cr_date like '$todaydate%' and  udtr_task_position ='$udtr_task_position'";
 			$old=mysqli_query($conn,$sql1)or die(mysqli_error($conn));
@@ -2491,6 +2504,7 @@ function end_time_log()
 				print_r(json_encode($output, true)); 
 				exit();
 			}
+
 	        $qrry_get='INSERT INTO `user_daily_task_record` ( `udtr_fb_id`, `udtr_cr_date`, `udtr_daily_task_id`, `udtr_add_silver_coin`, `udtr_task_type`,`udtr_task_position`) VALUES ("'.$fb_id.'","'.$DATE_TIME.'","'.$task_id.'","'.$add_silver_coin.'","'.$task_type.'","'.$udtr_task_position.'")';
 			 
 		     $res=mysqli_query($conn,$qrry_get)or die(mysqli_error($conn));
@@ -2539,7 +2553,7 @@ function end_time_log()
 			
 			$udtr_id=$event_json['udtr_id'];
 	        
-	         $sql1="SELECT * FROM `user_daily_task_record` WHERE udtr_id='$udtr_id' AND udtr_fb_id='$fb_id' AND udtr_id = '$udtr_id' ";
+	         $sql1="SELECT * FROM `user_daily_task_record` WHERE udtr_id='$udtr_id' AND udtr_fb_id='$fb_id'";
 			$old=mysqli_query($conn,$sql1)or die(mysqli_error($conn));
  		   	$datato_collect=mysqli_fetch_assoc($old); 
 		 	//print_r($datato_collect);
@@ -4637,6 +4651,14 @@ function daily_task_today(){
 				print_r(json_encode($output, true)); 
 				exit();
 			}
+			if(!isset($event_json['vip_status']) || $event_json['vip_status']=="") 
+			{
+				$msg_out="Validation Error vip_status Missing";
+			    $output=array( "code" => "201", "msg" => $msg_out ,  "data"=> "$today_day");
+				print_r(json_encode($output, true)); 
+				exit();
+			}
+			$vip_status=$event_json['vip_status'];
 			$fb_id=$event_json['fb_id'];
 	         $qrry_get=" SELECT * FROM `daily_task` WHERE daily_task_id=$today_day ";
 			 $res=mysqli_query($conn,$qrry_get)or die(mysqli_error($conn));
@@ -4679,8 +4701,51 @@ function daily_task_today(){
 		  		  				);
 		  		  array_push($custom_array,$value);
 		  		}
-
-		  	$outputdata = array('todays_task' => $daily_task_data , 'to_do_task' =>$custom_array ); 
+				  $vip_task_data=array();
+				  if($vip_status==1){
+					$qrry_get="SELECT * FROM `daily_vip_task` WHERE daily_vip_task_id=$today_day";
+					$res=mysqli_query($conn,$qrry_get)or die(mysqli_error($conn));
+						$daily_vip_task_data=mysqli_fetch_assoc($res);
+						if($daily_vip_task_data){
+							$task_vip_count=$daily_vip_task_data['daily_vip_task_total_target'];	
+		  	  $par_vip_task=$daily_vip_task_data['daily_vip_task_per_target'];
+				$vip_task_position=5;
+		  	  for($i=1; $i<=$task_vip_count ; $i++) {
+		  				# code...
+		  	  	$vip_task_status="0";
+		  	  	$task_done="";
+					$vip_task_position=$vip_task_position+$i;
+		  	  	$sql1="SELECT * FROM `user_daily_task_record` WHERE udtr_fb_id='$fb_id' AND udtr_cr_date like '$todaydate%' and udtr_task_position ='$vip_task_position'";
+					 $res=mysqli_query($conn,$sql1) or die(mysqli_error($conn));
+ 		       	   $done_vip_task_data="";
+ 		       	 $done_vip_task_data1=mysqli_fetch_assoc($res); 
+			 	$to_do_vip_task_is_coin_collect="0";
+			 	if($done_vip_task_data1){
+				    $done_vip_task_data=$done_vip_task_data1;
+				    $to_do_vip_task_is_coin_collect=$done_vip_task_data1['udtr_id'];
+				       $vip_task_status="1";
+		  	    	  if($done_vip_task_data1['udtr_is_coin_collected']!=0){
+					   $vip_task_status="2";
+		  	    	   }
+					  
+		  	    	   }
+		  	     $vip_task_string="Watch Video to get Reward ";
+		  	     $vip_coins_collection_string="par Video ".$par_vip_task ." Silver coin";
+		  		  $value= array( 
+		  		  				 'to_do_daily_task_id'=>$daily_vip_task_data['daily_vip_task_id'],	
+		  		  				 'to_do_task_postion' => $vip_task_position , 
+		  		  				 'to_do_task_title' => "Task -".$vip_task_position,
+		  		  				 'to_do_task_discription' => $vip_task_string,
+		  		  				 'to_do_task_coins_collection_discription' => $vip_coins_collection_string,
+		  		  				 'to_do_task_is_completed_task' => $vip_task_status,
+		  		  				 'to_do_task_record' => $done_vip_task_data, 
+		  		  				 'to_do_task_is_coin_collect'=>$to_do_vip_task_is_coin_collect	
+		  		  				);
+		  		  array_push($vip_task_data,$value);
+		  		}
+						}
+				  }
+		  	$outputdata = array('todays_task' => $daily_task_data , 'to_do_task' =>$custom_array,'todays_vip_task' => $daily_vip_task_data ,'to_do_vip_task'=> $vip_task_data); 
 		  	//if($outputdata){
 			    $msg_out="Get daily task";	
 				$output=array( "code" => "200", "msg" => $msg_out ,"data" => $outputdata);
@@ -6526,7 +6591,11 @@ function uploadVideo()
 	}
 	
 
-
+function getcurrenttimendate(){
+	$array_out=date("Y-m-d h-i-s");
+	$output=array( "code" => "200", "msg" => $array_out);
+    		print_r(json_encode($output, true));
+}
 
 function showAllVideos_nearby()
 	{  
@@ -11543,14 +11612,14 @@ function get_topfans()
 	        if($ranking_mode =="Daily")	
 	        {
 				$todaydate=custom_current_date();
-				$sqli="SELECT UBH.ubh_fb_id, COUNT(UBH.ubh_gift_total_diamond) as r_diamond ,fb_id,mobile,first_name,last_name,profile_pic,user_wear_badge,total_diamondd,total_earning,total_expo,total_beans,total_silver_coin,vip_status FROM `user_baggage_history` AS UBH JOIN users as U ON U.fb_id=UBH.ubh_fb_id WHERE `ubh_cr_date` LIKE '$todaydate%' GROUP BY UBH.ubh_fb_id order BY r_diamond DESC ";
+				$sqli="SELECT UBH.ubh_fb_id, sum(UBH.ubh_gift_total_diamond) as r_diamond ,fb_id,mobile,first_name,last_name,profile_pic,user_wear_badge,total_diamondd,total_earning,total_expo,total_beans,total_silver_coin,vip_status FROM `user_baggage_history` AS UBH JOIN users as U ON U.fb_id=UBH.ubh_fb_id WHERE `ubh_cr_date` LIKE '$todaydate%' GROUP BY UBH.ubh_fb_id order BY r_diamond DESC";
 			
 			}
 
 			if($ranking_mode =="Weekly")	
 	        {
 				//$todaydate=custom_current_date();
-			 $sqli="SELECT UBH.ubh_fb_id, COUNT(UBH.ubh_gift_total_diamond) as r_diamond ,fb_id,mobile,first_name,last_name,profile_pic,user_wear_badge,total_diamondd,total_earning,total_expo,total_beans,total_silver_coin,vip_status FROM `user_baggage_history` AS UBH JOIN users as U ON U.fb_id=UBH.ubh_fb_id WHERE  yearweek(DATE(ubh_cr_date), 1) = yearweek(curdate(), 1) GROUP BY UBH.ubh_fb_id order BY r_diamond DESC ";
+			 $sqli="SELECT UBH.ubh_fb_id, sum(UBH.ubh_gift_total_diamond) as r_diamond ,fb_id,mobile,first_name,last_name,profile_pic,user_wear_badge,total_diamondd,total_earning,total_expo,total_beans,total_silver_coin,vip_status FROM `user_baggage_history` AS UBH JOIN users as U ON U.fb_id=UBH.ubh_fb_id WHERE  yearweek(DATE(ubh_cr_date), 1) = yearweek(curdate(), 1) GROUP BY UBH.ubh_fb_id order BY r_diamond DESC ";
 			
 			}
 
@@ -11559,7 +11628,7 @@ function get_topfans()
 				$todaydate=custom_current_date();
 				$wise_check=date("Y-m" ,strtotime($todaydate));
 		  	
-				$sqli="SELECT UBH.ubh_fb_id, COUNT(UBH.ubh_gift_total_diamond) as r_diamond ,fb_id,mobile,first_name,last_name,profile_pic,user_wear_badge,total_diamondd,total_earning,total_expo,total_beans,total_silver_coin,vip_status FROM `user_baggage_history` AS UBH JOIN users as U ON U.fb_id=UBH.ubh_fb_id WHERE `ubh_cr_date` LIKE '$wise_check%' GROUP BY UBH.ubh_fb_id order BY r_diamond DESC ";
+				$sqli="SELECT UBH.ubh_fb_id, sum(UBH.ubh_gift_total_diamond) as r_diamond ,fb_id,mobile,first_name,last_name,profile_pic,user_wear_badge,total_diamondd,total_earning,total_expo,total_beans,total_silver_coin,vip_status FROM `user_baggage_history` AS UBH JOIN users as U ON U.fb_id=UBH.ubh_fb_id WHERE `ubh_cr_date` LIKE '$wise_check%' GROUP BY UBH.ubh_fb_id order BY r_diamond DESC ";
 			
 			}	
 				$result=mysqli_query($conn,$sqli) or die(mysqli_error($conn));
@@ -11589,7 +11658,6 @@ function get_topfans()
 
              	$value['user_total_send_diamond']=get_user_total_send_diamond($value['fb_id']);
 		  		$value['user_total_received_diamond']=get_user_total_received_diamond($value['fb_id']);
-		
 			  	$value['vip_details_icon'] =get_user_vip_status_icon($value['fb_id']);
 			    $value['user_level_icon']= get_user_level_icon($value['fb_id']);	
 			    $value['user_family_level_icon']=    get_user_family_level_icon($value['fb_id']);	
@@ -11658,7 +11726,6 @@ function get_topfans()
 
              	$value['user_total_send_diamond']=get_user_total_send_diamond($value['fb_id']);
 		  		$value['user_total_received_diamond']=get_user_total_received_diamond($value['fb_id']);
-		
 			  	$value['vip_details_icon'] =get_user_vip_status_icon($value['fb_id']);
 			    $value['user_level_icon']= get_user_level_icon($value['fb_id']);	
 			    $value['user_family_level_icon']=    get_user_family_level_icon($value['fb_id']);	
@@ -11889,7 +11956,7 @@ function get_topfans()
 		   	
 		
 	
-			if(!isset($event_json['ranking_type']) || $event_json['ranking_type']=="") 
+			if(!isset($event_json['ranking_type']) || $event_json['ranking_type']=="")
 			{
 				$msg_out="Validation Error ranking_type Missing";
 			    $output=array( "code" => "201", "msg" => $msg_out ,  "data"=> "");
@@ -11926,7 +11993,9 @@ function get_topfans()
 		  				# code...
 		  			 $data_out=TOP_STAR_mode($fb_id ,$ranking_mode , $ranking_type); 
 		  			break;
-		  		
+		  		/*SELECT UBH.ubh_fb_id, COUNT(UBH.ubh_gift_total_diamond) as r_diamond ,fb_id,mobile,first_name,last_name,profile_pic,user_wear_badge,total_diamondd,total_earning,total_expo,total_beans,total_silver_coin,vip_status FROM `user_baggage_history` AS UBH JOIN users as U ON U.fb_id=UBH.ubh_fb_id WHERE `ubh_cr_date` LIKE '2021-06-17%' GROUP BY UBH.ubh_fb_id order BY r_diamond DESC;
+SELECT UBH.ubh_fb_id, COUNT(UBH.ubh_gift_total_diamond) as r_diamond ,fb_id,mobile,first_name,last_name,profile_pic,user_wear_badge,total_diamondd,total_earning,total_expo,total_beans,total_silver_coin,vip_status FROM `user_baggage_history` AS UBH JOIN users as U ON U.fb_id=UBH.ubh_fb_id WHERE  yearweek(DATE(ubh_cr_date), 1) = yearweek(curdate(), 1) GROUP BY UBH.ubh_fb_id order BY r_diamond DESC
+SELECT UBH.ubh_fb_id, COUNT(UBH.ubh_gift_total_diamond) as r_diamond ,fb_id,mobile,first_name,last_name,profile_pic,user_wear_badge,total_diamondd,total_earning,total_expo,total_beans,total_silver_coin,vip_status FROM `user_baggage_history` AS UBH JOIN users as U ON U.fb_id=UBH.ubh_fb_id WHERE `ubh_cr_date` LIKE '2021-06%' GROUP BY UBH.ubh_fb_id order BY r_diamond DESC*/
 		  		}
 		  
 		  	}		
