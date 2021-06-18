@@ -4651,13 +4651,13 @@ function daily_task_today(){
 				print_r(json_encode($output, true)); 
 				exit();
 			}
-			if(!isset($event_json['vip_status']) || $event_json['vip_status']=="") 
-			{
-				$msg_out="Validation Error vip_status Missing";
-			    $output=array( "code" => "201", "msg" => $msg_out ,  "data"=> "$today_day");
-				print_r(json_encode($output, true)); 
-				exit();
-			}
+			// if($event_json['vip_status']==null ||$event_json['vip_status']=="") 
+			// {
+			// 	$msg_out="Validation Error vip_status Missing";
+			//     $output=array( "code" => "201", "msg" => $msg_out ,  "data"=> "$today_day");
+			// 	print_r(json_encode($output, true)); 
+			// 	exit();
+			// }
 			$vip_status=$event_json['vip_status'];
 			$fb_id=$event_json['fb_id'];
 	         $qrry_get=" SELECT * FROM `daily_task` WHERE daily_task_id=$today_day ";
@@ -11682,17 +11682,21 @@ function get_topfans()
 	        //NOTE: ubh_fb_id
 	        
 	        include("config.php");
-			if($ranking_mode =="Todays")	
+			if($ranking_mode =="Daily")	
 	        {
 				$todaydate=custom_current_date();
 				$sqli="SELECT UBH.ubh_fb_id, SUM(UBH.ubh_gift_total_diamond) as r_diamond ,fb_id,mobile,first_name,last_name,profile_pic,user_wear_badge,total_diamondd,total_earning,total_expo,total_beans,total_silver_coin,vip_status FROM `user_baggage_history` AS UBH JOIN users as U ON U.fb_id=UBH.ubh_fb_id JOIN  user_live_room_details as ULRD ON ULRD.ulrd_id=UBH.ubh_type_id WHERE UBH.ubh_type='LIVEROOM' AND UBH.ubh_cr_date LIKE '$todaydate%' AND ULRD.ulrd_cr_date LIKE '$todaydate%'  GROUP BY UBH.ubh_fb_id order BY r_diamond DESC ";
 			
-			}
-
-			if($ranking_mode =="Overall")	
+			}elseif($ranking_mode =="Monthly")	
+	        {
+				$todaydate=custom_current_date();
+				$wise_check=date("Y-m" ,strtotime($todaydate));
+				$sqli="SELECT UBH.ubh_fb_id, SUM(UBH.ubh_gift_total_diamond) as r_diamond ,fb_id,mobile,first_name,last_name,profile_pic,user_wear_badge,total_diamondd,total_earning,total_expo,total_beans,total_silver_coin,vip_status FROM `user_baggage_history` AS UBH JOIN users as U ON U.fb_id=UBH.ubh_fb_id JOIN  user_live_room_details as ULRD ON ULRD.ulrd_id=UBH.ubh_type_id WHERE UBH.ubh_type='LIVEROOM' AND UBH.ubh_cr_date LIKE '$wise_check%' AND ULRD.ulrd_cr_date LIKE '$wise_check%'  GROUP BY UBH.ubh_fb_id order BY r_diamond DESC ";
+			
+			}elseif($ranking_mode =="Weekly")	
 	        {
 				//$todaydate=custom_current_date();
-			 $sqli="SELECT UBH.ubh_fb_id, SUM(UBH.ubh_gift_total_diamond) as r_diamond ,fb_id,mobile,first_name,last_name,profile_pic,user_wear_badge,total_diamondd,total_earning,total_expo,total_beans,total_silver_coin,vip_status FROM `user_baggage_history` AS UBH JOIN users as U ON U.fb_id=UBH.ubh_fb_id JOIN user_live_room_details as ULRD ON ULRD.ulrd_id=UBH.ubh_type_id WHERE UBH.ubh_type='LIVEROOM' GROUP BY UBH.ubh_fb_id order BY r_diamond DESC";
+			 $sqli="SELECT UBH.ubh_fb_id, SUM(UBH.ubh_gift_total_diamond) as r_diamond ,fb_id,mobile,first_name,last_name,profile_pic,user_wear_badge,total_diamondd,total_earning,total_expo,total_beans,total_silver_coin,vip_status FROM `user_baggage_history` AS UBH JOIN users as U ON U.fb_id=UBH.ubh_fb_id JOIN user_live_room_details as ULRD ON ULRD.ulrd_id=UBH.ubh_type_id WHERE UBH.ubh_type='LIVEROOM' and  yearweek(DATE(ubh_cr_date), 1) = yearweek(curdate(), 1) GROUP BY UBH.ubh_fb_id order BY r_diamond DESC";
 			
 			}
 
@@ -12031,15 +12035,20 @@ SELECT UBH.ubh_fb_id, COUNT(UBH.ubh_gift_total_diamond) as r_diamond ,fb_id,mobi
 		  		//GIFT LENE WALA
 
 		  		switch ($ranking_mode) {
-		  			case 'Todays':
+		  			case 'Daily':
 		  				# code...
 		  			 $data_out=TOP_STAR_ONLY_LIVE($fb_id ,$ranking_mode , $ranking_type); 
 		  			 break;
 		  			
-		  		    case 'Overall':
+		  		    case 'Weekly':
 		  				# code...
 		  			 $data_out=TOP_STAR_ONLY_LIVE($fb_id ,$ranking_mode , $ranking_type); 
 		  			break;
+
+					case 'Monthly':
+						# code...
+					 $data_out=TOP_STAR_ONLY_LIVE($fb_id ,$ranking_mode , $ranking_type); 
+					break;
 		  		
 		  		}
 		  
